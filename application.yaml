@@ -7,16 +7,16 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Devs-At-Work/frontend-configs.git
+    repoURL: https://github.com/deepanshu-rawat6/flask-frontend-configs.git
     targetRevision: HEAD
     path: dev
-  destination: 
+  destination:
     server: https://kubernetes.default.svc
     namespace: default
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
 
     automated:
       selfHeal: true
