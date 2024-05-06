@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          # image: 854171615125.dkr.ecr.us-east-1.amazonaws.com/deepanshurawat6-web-frontend:1.0.1
+          image: aryanshrana/frontend:1.1.1-6
+          resources:
+            requests:
+              cpu: 500m
+              memory: 0.5Gi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+          ports:
+            - containerPort: 8082
